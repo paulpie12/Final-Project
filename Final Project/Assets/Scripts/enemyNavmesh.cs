@@ -14,6 +14,7 @@ public class enemyNavmesh : MonoBehaviour
     public float sightRange;
     public bool playerInSight;
     public bool sneaking;
+    private bool stunned;
 
 
 
@@ -51,9 +52,25 @@ public class enemyNavmesh : MonoBehaviour
             Debug.Log("Enemy is standing still");
         }
 
-
+        if (stunned == true)
+        {
+            Debug.Log("The Enemy is stunned");
+            enemy.SetDestination(Enemypos.position);
+            Invoke("stunevent", 3);
+        }
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "sleep")
+        {
+            Debug.Log("Entered collision with " + collision.gameObject.name);
+            stunned = true;
+        }
+    }
+    private void stunevent()
+    {
+        stunned = false;
+    }
 
 }

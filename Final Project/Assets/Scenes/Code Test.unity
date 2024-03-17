@@ -277,17 +277,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dcc454188ad784bb1eac5396a45a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  currentSpeed: 0
+  moveSpeed: 0
+  walkSpeed: 10
+  sprintSpeed: 15
   groundDrag: 5
+  slideDrag: 0
+  airDrag: 0
   jumpForce: 8
   jumpCooldown: 0.5
   airMultiplier: 0.4
+  readyToJump: 0
+  crouchSpeed: 5
+  crouchYScale: 0.5
   jumpKey: 32
+  sprintKey: 113
+  crouchKey: 114
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
+  grounded: 0
   orientation: {fileID: 260731454}
+  state: 0
 --- !u!114 &250796134
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -42,11 +42,18 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     [SerializeField] bool grounded;
 
+    [Header("Laser Slow")]
+    [SerializeField] public float slowDuration;
+    [SerializeField] public float slowSpeed;
+    bool isSlowed;
+
     [Header("Other")]
     public Transform orientation;
 
     float horizontalInput;
     float verticalInput;
+
+    
 
     Vector3 moveDirection;
 
@@ -70,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
         moveSpeed = walkSpeed;
         startYScale = transform.localScale.y;
+        isSlowed = false;
 
         StartCoroutine(SpeedCalculation());
     }
@@ -119,77 +127,83 @@ public class PlayerMovement : MonoBehaviour
         // Sliding State
         // Slide is active when crouchKey is pressed, player is on the ground, 
         // moveSpeed is set to sprintSpeed, and the player is moving
-        if (Input.GetKey(crouchKey) && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
+        if (isSlowed == false)
         {
-            // If previous state was not sliding or crouched, adjust height
-            if (state != MovementState.sliding && state != MovementState.crouching)
-            {
-                transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-                rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-            }
-            state = MovementState.sliding;
-            rb.AddForce(moveDirection * 5f, ForceMode.Impulse);
-            rb.drag = slideDrag;
-        }
 
-        // Crouching State
-        else if (Input.GetKey(crouchKey) && grounded)
-        {
-            // If previous state was not sliding or crouched, adjust height
-            if (state != MovementState.sliding && state != MovementState.crouching)
+            if (Input.GetKey(crouchKey) && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
             {
-                transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-                rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-            }
-            state = MovementState.crouching;
-            moveSpeed = crouchSpeed;
-            rb.drag = groundDrag;
-        }
-
-        // Sprinting State
-        else if (Input.GetKey(sprintKey) && grounded)
-        {
-            // If previous state was sliding or crouched, adjust height
-            if (state == MovementState.sliding || state == MovementState.crouching)
-            {
-                transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-            }
-            state = MovementState.sprinting;
-            moveSpeed = sprintSpeed;
-            rb.drag = groundDrag;
-        }
-
-        // Walking State
-        else if (grounded)
-        {
-            // If previous state was sliding or crouched, adjust height
-            if (state == MovementState.sliding || state == MovementState.crouching)
-            {
-                transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-            }
-            state = MovementState.walking;
-            moveSpeed = walkSpeed;
-            rb.drag = groundDrag;
-        }
-
-        // Air State
-        else
-        {
-            // If previous state was sliding or crouched, adjust height
-            if (state == MovementState.sliding || state == MovementState.crouching)
-            {
-                transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                // If previous state was not sliding or crouched, adjust height
+                if (state != MovementState.sliding && state != MovementState.crouching)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+                    rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+                }
+                state = MovementState.sliding;
+                rb.AddForce(moveDirection * 5f, ForceMode.Impulse);
+                rb.drag = slideDrag;
             }
 
-            state = MovementState.air;
-            // Will update moveSpeed to walkSpeed/sprintSpeed in air if necessary
-            if (Input.GetKey(sprintKey))
+            // Crouching State
+            else if (Input.GetKey(crouchKey) && grounded)
             {
+                // If previous state was not sliding or crouched, adjust height
+                if (state != MovementState.sliding && state != MovementState.crouching)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+                    rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+                }
+                state = MovementState.crouching;
+                moveSpeed = crouchSpeed;
+                rb.drag = groundDrag;
+            }
+
+            // Sprinting State
+            else if (Input.GetKey(sprintKey) && grounded)
+            {
+                // If previous state was sliding or crouched, adjust height
+                if (state == MovementState.sliding || state == MovementState.crouching)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                }
+                state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
-            } else {
-                moveSpeed = walkSpeed;
+                rb.drag = groundDrag;
             }
-            rb.drag = airDrag;
+
+            // Walking State
+            else if (grounded)
+            {
+            
+                // If previous state was sliding or crouched, adjust height
+                if (state == MovementState.sliding || state == MovementState.crouching)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                }
+                state = MovementState.walking;
+                moveSpeed = walkSpeed;
+                rb.drag = groundDrag;
+            }
+
+            // Air State
+            else
+            {
+                // If previous state was sliding or crouched, adjust height
+                if (state == MovementState.sliding || state == MovementState.crouching)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                }
+
+                state = MovementState.air;
+                // Will update moveSpeed to walkSpeed/sprintSpeed in air if necessary
+                if (Input.GetKey(sprintKey))
+                {
+                    moveSpeed = sprintSpeed;
+                } else {
+                    moveSpeed = walkSpeed;
+                }
+                rb.drag = airDrag;
+            }
+
         }
     }
 
@@ -253,4 +267,24 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToJump = true;
     }
+
+    //This function slows the player upon contacting an object with the laser tag
+    private void OnTriggerEnter(Collider other)
+    {
+        if ( other.CompareTag("Laser"))
+        {
+            isSlowed = true;
+            Debug.Log("The Player will be slowed");
+            moveSpeed = slowSpeed;
+            //audioSource.Play(); Since no audio source is connected, this causes code to stop in the middle of the function
+            Invoke(nameof(NotSlowed), slowDuration);
+        }
+    }
+
+    private void NotSlowed()
+    {
+        isSlowed = false;
+        Debug.Log("The Player returns to normal speed");
+    }
+    
 }

@@ -18,6 +18,7 @@ public class ThirdPersonCam : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+    
     private void Update()
     {
         
@@ -37,8 +38,5 @@ public class ThirdPersonCam : MonoBehaviour
         orientation.forward = dirToCombatLookAt.normalized;
 
         playerObj.forward = dirToCombatLookAt.normalized;
-
-        
     }
-
 }

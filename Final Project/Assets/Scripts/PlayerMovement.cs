@@ -32,11 +32,6 @@ public class PlayerMovement : MonoBehaviour
     public float crouchYScale;
     private float startYScale;
 
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode sprintKey = KeyCode.Q;
-    public KeyCode crouchKey = KeyCode.R;
-
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
@@ -60,36 +55,6 @@ public class PlayerMovement : MonoBehaviour
         crouching,
         sliding,
         air
-    }
-
-    private bool getJump() {
-        if (Input.GetKey(jumpKey)) {
-            return true;
-        } else if (Gamepad.current != null) {
-            return Gamepad.current.buttonSouth.wasPressedThisFrame;
-        } else {
-            return false;
-        }
-    }
-
-    private bool getSprint() {
-        if (Input.GetKey(sprintKey)) {
-            return true;
-        } else if (Gamepad.current != null) {
-            return Gamepad.current.leftTrigger.isPressed;
-        } else {
-            return false;
-        }
-    }
-
-    private bool getCrouch() {
-        if (Input.GetKey(crouchKey)) {
-            return true;
-        } else if (Gamepad.current != null) {
-            return Gamepad.current.buttonEast.isPressed;
-        } else {
-            return false;
-        }
     }
 
     private void Start()
@@ -134,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //This code allows you to jump
-        if(getJump() && readyToJump && grounded)
+        if(InputControls.getJump() && readyToJump && grounded)
         {
             readyToJump = false;
             //audioSource.Play(); Since no audio source is connected, this causes code to stop in the middle of the function
@@ -149,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         // Sliding State
         // Slide is active when crouchKey is pressed, player is on the ground, 
         // moveSpeed is set to sprintSpeed, and the player is moving
-        if (getCrouch() && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
+        if (InputControls.getCrouch() && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
         {
             // If previous state was not sliding or crouched, adjust height
             if (state != MovementState.sliding && state != MovementState.crouching)
@@ -163,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Crouching State
-        else if (getCrouch() && grounded)
+        else if (InputControls.getCrouch() && grounded)
         {
             // If previous state was not sliding or crouched, adjust height
             if (state != MovementState.sliding && state != MovementState.crouching)
@@ -177,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Sprinting State
-        else if (getSprint() && grounded)
+        else if (InputControls.getSprint() && grounded)
         {
             // If previous state was sliding or crouched, adjust height
             if (state == MovementState.sliding || state == MovementState.crouching)
@@ -213,7 +178,7 @@ public class PlayerMovement : MonoBehaviour
 
             state = MovementState.air;
             // Will update moveSpeed to walkSpeed/sprintSpeed in air if necessary
-            if (getSprint())
+            if (InputControls.getSprint())
             {
                 moveSpeed = sprintSpeed;
             } else {

@@ -16,13 +16,6 @@ public class enemyNavmesh : MonoBehaviour
     public bool sneaking;
     private bool stunned;
 
-
-
-    void Start()
-{
-
-}
-
     private void Awake()
     {
         Player = GameObject.Find("Player").transform;
@@ -31,16 +24,17 @@ public class enemyNavmesh : MonoBehaviour
     {
         playerInSight = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
-        if (Input.GetKeyDown("c"))
+        // Changed this to use new input method
+        if (InputControls.getSneak()) 
         {
             sneaking = true;
-        }
-        if (Input.GetKeyUp("c"))
-        {
-            sneaking = false;   
+        } 
+        else {
+            sneaking = false;
         }
 
-        else if (playerInSight == true && sneaking == false)
+        // Changed from else if to a new set of if statements
+        if (playerInSight == true && sneaking == false)
         {
             enemy.SetDestination(Player.position);
             Debug.Log("Enemy is targeting player");

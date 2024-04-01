@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,11 +32,6 @@ public class PlayerMovement : MonoBehaviour
     public float crouchYScale;
     private float startYScale;
 
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode sprintKey = KeyCode.Q;
-    public KeyCode crouchKey = KeyCode.R;
-
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
@@ -52,8 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalInput;
     float verticalInput;
-
-    
 
     Vector3 moveDirection;
 
@@ -85,8 +78,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //This checks if you are grounded
-        //grounded = Physics.Raycast(transform.position + new Vector3(0, playerHeight * .51f, 0), Vector3.down, playerHeight * 0.5f, whatIsGround);
-        // ^The commented out line wasn't working for grounding, so I replaced with this line:
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         
         MyInput();
@@ -94,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         StateHandler();
 
         // I moved the drag functionality to the state handler function - this section is only for debugging
-        //This will create drag if you are grounded, and remove it if you are in the air
+        // This will create drag if you are grounded, and remove it if you are in the air
         if (grounded)
         {
             Debug.Log("The player is grounded");
@@ -112,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //This code allows you to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if(InputControls.getJump() && readyToJump && grounded)
         {
             readyToJump = false;
             //audioSource.Play(); Since no audio source is connected, this causes code to stop in the middle of the function
@@ -130,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         if (isSlowed == false)
         {
 
-            if (Input.GetKey(crouchKey) && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
+            if (InputControls.getCrouch() && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
             {
                 // If previous state was not sliding or crouched, adjust height
                 if (state != MovementState.sliding && state != MovementState.crouching)
@@ -144,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Crouching State
-            else if (Input.GetKey(crouchKey) && grounded)
+            else if (InputControls.getCrouch() && grounded)
             {
                 // If previous state was not sliding or crouched, adjust height
                 if (state != MovementState.sliding && state != MovementState.crouching)
@@ -158,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Sprinting State
-            else if (Input.GetKey(sprintKey) && grounded)
+            else if (InputControls.getSprint() && grounded)
             {
                 // If previous state was sliding or crouched, adjust height
                 if (state == MovementState.sliding || state == MovementState.crouching)
@@ -195,7 +186,7 @@ public class PlayerMovement : MonoBehaviour
 
                 state = MovementState.air;
                 // Will update moveSpeed to walkSpeed/sprintSpeed in air if necessary
-                if (Input.GetKey(sprintKey))
+                if (InputControls.getSprint())
                 {
                     moveSpeed = sprintSpeed;
                 } else {
@@ -203,7 +194,6 @@ public class PlayerMovement : MonoBehaviour
                 }
                 rb.drag = airDrag;
             }
-
         }
     }
 

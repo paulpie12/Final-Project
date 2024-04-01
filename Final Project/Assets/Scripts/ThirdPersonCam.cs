@@ -37,8 +37,5 @@ public class ThirdPersonCam : MonoBehaviour
         orientation.forward = dirToCombatLookAt.normalized;
 
         playerObj.forward = dirToCombatLookAt.normalized;
-
-        
     }
-
 }

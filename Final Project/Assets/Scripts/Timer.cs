@@ -8,12 +8,7 @@ public class Timer : MonoBehaviour
     public float timeLeft = 60.0f;
     public Text timer;
     public Text losescreen;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {

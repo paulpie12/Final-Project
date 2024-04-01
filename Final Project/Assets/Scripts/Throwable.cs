@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class Throwable : MonoBehaviour
     public float throwCooldown;
 
     [Header("Throwing")]
-    public KeyCode throwKey = KeyCode.Mouse0;
+    //public KeyCode throwKey = KeyCode.E; - MOVED TO NEW INPUTCONTROLS SCRIPT
     public float throwForce;
     public float throwUpwardForce;
 
@@ -33,7 +33,7 @@ public class Throwable : MonoBehaviour
 
     private void Update()
     {
-         if(Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0) 
+        if(InputControls.getThrow() && readyToThrow && totalThrows > 0)  
         {
             Throw();
         }

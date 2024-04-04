@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3148,6 +3148,7 @@ GameObject:
   - component: {fileID: 288628198}
   - component: {fileID: 288628197}
   - component: {fileID: 288628196}
+  - component: {fileID: 288628201}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -3265,6 +3266,20 @@ Transform:
   - {fileID: 529279917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288628201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288628195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84532aa412eb1947b7ba37e045ab158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1598266404}
+  isPaused: 0
 --- !u!1001 &289709354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15206,7 +15221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608742383}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12914458, y: 0.09175967, z: -0.012002719, w: 0.98729825}
+  m_LocalRotation: {x: 0.12914458, y: 0.0917597, z: -0.012002723, w: 0.98729825}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20537,7 +20552,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2138647222}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: b84532aa412eb1947b7ba37e045ab158, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2138647222
 MonoBehaviour:
   m_ObjectHideFlags: 0

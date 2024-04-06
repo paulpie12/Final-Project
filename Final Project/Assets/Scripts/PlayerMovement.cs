@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private AudioSource audioSource;
+    private Animator animator;
 
     [Header("Movement")]
     public float currentSpeed;
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         rb.freezeRotation = true;
@@ -132,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.sliding;
                 rb.AddForce(moveDirection * 5f, ForceMode.Impulse);
                 rb.drag = slideDrag;
+                animator.SetFloat("Speed", 0);
             }
 
             // Crouching State
@@ -146,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.crouching;
                 moveSpeed = crouchSpeed;
                 rb.drag = groundDrag;
+                animator.SetFloat("Speed", 0);
             }
 
             // Sprinting State
@@ -155,10 +159,12 @@ public class PlayerMovement : MonoBehaviour
                 if (state == MovementState.sliding || state == MovementState.crouching)
                 {
                     transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                    
                 }
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
                 rb.drag = groundDrag;
+                animator.SetFloat("Speed", 0);
             }
 
             // Walking State
@@ -173,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.walking;
                 moveSpeed = walkSpeed;
                 rb.drag = groundDrag;
+                animator.SetFloat("Speed", walkSpeed);
             }
 
             // Air State

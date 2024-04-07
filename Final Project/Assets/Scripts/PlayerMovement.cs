@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.sliding;
                 rb.AddForce(moveDirection * 5f, ForceMode.Impulse);
                 rb.drag = slideDrag;
-                animator.SetFloat("Speed", 0);
+                animator.SetFloat("Speed", 1);
             }
 
             // Crouching State
@@ -149,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.crouching;
                 moveSpeed = crouchSpeed;
                 rb.drag = groundDrag;
-                animator.SetFloat("Speed", 0);
+                animator.SetFloat("Speed", 1);
             }
 
             // Sprinting State
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
                 rb.drag = groundDrag;
-                animator.SetFloat("Speed", 0);
+                animator.SetFloat("Speed", 1);
             }
 
             // Walking State
@@ -179,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.walking;
                 moveSpeed = walkSpeed;
                 rb.drag = groundDrag;
-                animator.SetFloat("Speed", walkSpeed);
+                animator.SetFloat("Speed", 1);
             }
 
             // Air State

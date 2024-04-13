@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Crouching")]
     public float crouchSpeed;
+    public float slideSpeed;
     public float crouchYScale;
+    public float slideYScale;
     private float startYScale;
 
     [Header("Ground Check")]
@@ -113,15 +115,16 @@ public class PlayerMovement : MonoBehaviour
     {
         // Sliding State
         // Slide is active when crouchKey is pressed, player is on the ground, 
-        // moveSpeed is set to sprintSpeed, and the player is moving
-        if (InputControls.getCrouch() && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
+        // moveSpeed is set to sprintSpeed or slideSpeed, and the player is moving
+        if (InputControls.getCrouch() && grounded && (moveSpeed == sprintSpeed || moveSpeed == slideSpeed) && currentSpeed != 0) 
         {
             // If previous state was not sliding or crouched, adjust height
-            if (state != MovementState.sliding && state != MovementState.crouching)
+            if (state != MovementState.sliding)
             {
-                transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+                transform.localScale = new Vector3(transform.localScale.x, slideYScale, transform.localScale.z);
                 rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
             }
+            moveSpeed = slideSpeed;
             state = MovementState.sliding;
             rb.AddForce(moveDirection * 5f, ForceMode.Impulse);
             rb.drag = slideDrag;
@@ -131,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
         else if (InputControls.getCrouch() && grounded)
         {
             // If previous state was not sliding or crouched, adjust height
-            if (state != MovementState.sliding && state != MovementState.crouching)
+            if (state != MovementState.crouching)
             {
                 transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
                 rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);

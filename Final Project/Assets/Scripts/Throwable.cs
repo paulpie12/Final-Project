@@ -33,7 +33,7 @@ public class Throwable : MonoBehaviour
 
     private void Update()
     {
-        if(InputControls.getThrow() && readyToThrow && totalThrows > 0)  
+         if(InputControls.getThrow() && readyToThrow && totalThrows > 0) 
         {
             Throw();
         }

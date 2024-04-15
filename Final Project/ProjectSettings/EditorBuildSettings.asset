@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Lvl_Bank.unity
-    guid: 1842180d89baca34a938cc380aedda88
-  - enabled: 1
-    path: Assets/Scenes/Menus/Menu_Win.unity
-    guid: 3aa6b603c5de2244380434a387c67865
-  - enabled: 1
-    path: Assets/Scenes/Lvl_WhiteHouse.unity
-    guid: 37b1e7c5d80b39d49a02f5ca9b1884da
-  - enabled: 1
     path: Assets/Scenes/Lvl_HUB.unity
     guid: 541779561c0e028468d9103850f9f241
+  - enabled: 1
+    path: Assets/Scenes/Lvl_Bank.unity
+    guid: 1842180d89baca34a938cc380aedda88
   - enabled: 1
     path: Assets/Scenes/Lvl_Museum.unity
     guid: dac540850e673ba42b669c6a4c99bed8
   - enabled: 1
-    path: Assets/Scenes/Menus/Menu_Main.unity
-    guid: a8ec103e4ef45f9498e8d454ce1806f1
+    path: Assets/Scenes/Lvl_WhiteHouse.unity
+    guid: 37b1e7c5d80b39d49a02f5ca9b1884da
+  - enabled: 1
+    path: Assets/Scenes/Menus/Menu_Win.unity
+    guid: 3aa6b603c5de2244380434a387c67865
   - enabled: 1
     path: Assets/Scenes/Menus/Menu_Lose.unity
     guid: d5b7865d80e7f9e4f9ddf3dcf8368701
+  - enabled: 1
+    path: Assets/Scenes/Menus/Menu_Main.unity
+    guid: a8ec103e4ef45f9498e8d454ce1806f1
   m_configObjects: {}

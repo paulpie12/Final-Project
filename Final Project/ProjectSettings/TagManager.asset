@@ -7,6 +7,10 @@ TagManager:
   - Undefined
   - sleep
   - Laser
+  - BankWin
+  - BankTP
+  - MuseumTP
+  - WhiteHouseTP
   layers:
   - Default
   - TransparentFX

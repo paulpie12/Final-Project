@@ -45,7 +45,7 @@ public class MenuNavigator : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Lvl_HUB");
+        MainMenu.SetActive(false);
     }
 
     public void QuitGame()

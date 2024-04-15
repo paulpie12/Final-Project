@@ -25,8 +25,23 @@ public class WinCondition : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        BankWin = true;
-        Debug.Log("You have beat the level");
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Hub");
+        if (other.CompareTag("BankWin"))
+        {
+            BankWin = true;
+            Debug.Log("You have beat the level");
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Hub");
+        }
+        if (other.CompareTag("BankTP"))
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Bank");
+        }
+        if (other.CompareTag("MuseumTP"))
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Museum"); 
+        }
+        if (other.CompareTag("WhiteHouseTP"))
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_WhiteHouse");
+        }
     }
 }

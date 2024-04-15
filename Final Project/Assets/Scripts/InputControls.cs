@@ -7,8 +7,8 @@ public class InputControls : MonoBehaviour
 {
     [Header("Keybinds")]
     public static KeyCode jumpKey = KeyCode.Space;
-    public static KeyCode sprintKey = KeyCode.Q;
-    public static KeyCode crouchKey = KeyCode.R;
+    public static KeyCode sprintKey = KeyCode.LeftShift;
+    public static KeyCode crouchKey = KeyCode.C;
     
     public static KeyCode sneakKey = KeyCode.C;
     public static KeyCode throwKey = KeyCode.E;

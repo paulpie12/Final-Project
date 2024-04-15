@@ -66,7 +66,7 @@ public class InputControls : MonoBehaviour
     }
 
     public static bool getPause() {
-        if (Input.GetKey(pauseKey)) {
+        if (Input.GetKeyDown(pauseKey)) {
             return true;
         } else if (Gamepad.current != null) {
             return Gamepad.current.startButton.isPressed;

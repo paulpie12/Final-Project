@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         // Changed to use new input method
-        if (InputControls.getPause())
+        if (Input.GetKeyDown(KeyCode.P))
         {
 
             if (isPaused)

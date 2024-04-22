@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _DETAIL_MULX2
   - _METALLICGLOSSMAP
   - _NORMALMAP
   m_InvalidKeywords: []
@@ -38,16 +39,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 31e3a1dc594eb8240b93cb14c21ac6a6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 1, y: 20}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 17f9bc0edb378a94f8ed32cc7c50a1b9, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 1, y: 20}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 71f864e42868649498e2f0ca4c357984, type: 3}

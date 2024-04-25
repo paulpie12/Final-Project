@@ -24,8 +24,10 @@ public class enemyNavmesh : MonoBehaviour
 
     public LayerMask targetMask;
     public LayerMask ObstructionMask;
+    Animator animator;
 
     public bool canSeePlayer;
+
 
     private void Awake()
     {
@@ -50,12 +52,14 @@ public class enemyNavmesh : MonoBehaviour
         if (playerInSight == true && sneaking == false && canSeePlayer == true)
         {
             enemy.SetDestination(Player.position);
+            animator.SetFloat("Walk", 1);
             Debug.Log("Enemy is targeting player");
         }
 
         else if (playerInSight != true)
         {
             enemy.SetDestination(Enemypos.position);
+            animator.SetFloat("Walk", 0);
             Debug.Log("Enemy is standing still");
         }
 
@@ -84,6 +88,7 @@ public class enemyNavmesh : MonoBehaviour
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
+        animator = GetComponent<Animator>();
     }
 
 

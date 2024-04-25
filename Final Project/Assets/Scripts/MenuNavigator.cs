@@ -47,7 +47,11 @@ public class MenuNavigator : MonoBehaviour
 
     public void PlayGame()
     {
-        MainMenu.SetActive(false);
+        SceneManager.LoadScene("Lvl_HUB");
+    }
+    public void MainMenuoutofMM()
+    {
+        SceneManager.LoadScene("Menu_Main");
     }
 
     public void QuitGame()
@@ -59,10 +63,12 @@ public class MenuNavigator : MonoBehaviour
     public void DoubleSpeed()
     {
        PlayerMovement.doubleSpeed = !PlayerMovement.doubleSpeed;
+        Debug.Log("Doublespeed");
     }
 
     public void DoubleJumpHeight()
     {
         PlayerMovement.doubleJumpHeight = !PlayerMovement.doubleJumpHeight;
+        Debug.Log("DoubleJumpHeight");
     }
 }

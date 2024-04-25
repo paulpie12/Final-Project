@@ -9,6 +9,7 @@ public class MenuNavigator : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject OptionsMenu;
     public GameObject AboutMenu;
+    public GameObject CreditsMenu;
 
     
 
@@ -19,6 +20,16 @@ public class MenuNavigator : MonoBehaviour
         OptionsMenu.SetActive(false);
         AboutMenu.SetActive(false);
         MainMenu.SetActive(true);
+        CreditsMenu.SetActive(false);
+    }
+
+     public void GoToCreditsMenu() 
+    {
+        PauseMenu.SetActive(false);
+        OptionsMenu.SetActive(false);
+        AboutMenu.SetActive(false);
+        MainMenu.SetActive(false);
+        CreditsMenu.SetActive(true);
     }
 
     public void GoToPauseMenu()
@@ -27,6 +38,7 @@ public class MenuNavigator : MonoBehaviour
         OptionsMenu.SetActive(false);
         AboutMenu.SetActive(false);
         PauseMenu.SetActive(true);
+        CreditsMenu.SetActive(false);
     }
 
     public void GoToOptions()
@@ -35,6 +47,7 @@ public class MenuNavigator : MonoBehaviour
         PauseMenu.SetActive(false);
         AboutMenu.SetActive(false);
         OptionsMenu.SetActive(true);
+        CreditsMenu.SetActive(false);
     }
 
     public void GoToAboutMenu()
@@ -43,6 +56,7 @@ public class MenuNavigator : MonoBehaviour
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         AboutMenu.SetActive(true);
+        CreditsMenu.SetActive(false);
     }
 
     public void PlayGame()

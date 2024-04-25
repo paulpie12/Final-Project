@@ -10,6 +10,8 @@ public class MenuNavigator : MonoBehaviour
     public GameObject OptionsMenu;
     public GameObject AboutMenu;
 
+    
+
 
     public void GoToMainMenu() 
     {
@@ -52,5 +54,15 @@ public class MenuNavigator : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("The Game Quit");
+    }
+
+    public void DoubleSpeed()
+    {
+       PlayerMovement.doubleSpeed = !PlayerMovement.doubleSpeed;
+    }
+
+    public void DoubleJumpHeight()
+    {
+        PlayerMovement.doubleJumpHeight = !PlayerMovement.doubleJumpHeight;
     }
 }

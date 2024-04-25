@@ -1376,7 +1376,7 @@ MonoBehaviour:
   groundDrag: 5
   slideDrag: 0
   airDrag: 3
-  jumpForce: 100
+  jumpForce: 30
   jumpCooldown: 0.5
   airMultiplier: 0.4
   readyToJump: 0

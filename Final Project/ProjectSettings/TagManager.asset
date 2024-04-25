@@ -11,6 +11,10 @@ TagManager:
   - BankTP
   - MuseumTP
   - WhiteHouseTP
+  - WhiteHouseWin
+  - MuseumPaintingsStolen
+  - Guard
+  - Camera
   layers:
   - Default
   - TransparentFX

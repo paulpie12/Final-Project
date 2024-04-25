@@ -1065,11 +1065,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 296160609}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 296160610}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &296160608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 296160607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &296160609
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296160608}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &296160610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296160608}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355141, y: 0.010295117, z: 0.06575798}
+  m_Center: {x: 7.861587e-18, y: 0, z: 0.02386846}
 --- !u!1001 &297819771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2328,11 +2391,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 649161814}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 649161813}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &649161812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 649161811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &649161813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649161812}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355141, y: 0.010295111, z: 0.07014767}
+  m_Center: {x: 0, y: -0, z: 0.02606327}
+--- !u!54 &649161814
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649161812}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &670707882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3825,11 +3951,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980774912}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980774911}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &980774910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 980774909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &980774911
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980774910}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &980774912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980774910}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355137, y: 0.010295109, z: 0.05204049}
+  m_Center: {x: 0, y: 0, z: 0.017009683}
 --- !u!1001 &992815630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3902,11 +4091,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 992815633}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 992815632}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &992815631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 992815630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &992815632
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992815631}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &992815633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992815631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355147, y: 0.010295113, z: 0.07938285}
+  m_Center: {x: 0, y: 0, z: 0.030680874}
 --- !u!1 &1011357048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,11 +4602,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1113331011}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1113331010}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &1113331009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 1113331008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1113331010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113331009}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355137, y: 0.010295109, z: 0.058812283}
+  m_Center: {x: 0, y: 0, z: 0.020395584}
+--- !u!54 &1113331011
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113331009}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1117277952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,11 +5294,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1150422523}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1150422524}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &1150422522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 1150422521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1150422523
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150422522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355142, y: 0.010295111, z: 0.07019933}
+  m_Center: {x: 0, y: 0, z: 0.02608911}
+--- !u!54 &1150422524
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150422522}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1153557617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3044404996150101001, guid: d953b91af3bf0de47999c405b9a88627, type: 3}
@@ -5269,11 +5647,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1173813376}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1173813375}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &1173813374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 1173813373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1173813375
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173813374}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1173813376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173813374}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355141, y: 0.010295117, z: 0.059078064}
+  m_Center: {x: -5.6168227e-18, y: 0, z: 0.02052849}
 --- !u!1001 &1179177370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7283,11 +7724,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1528092724}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1528092723}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &1528092722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 1528092721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1528092723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528092722}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355141, y: 0.010295117, z: 0.06760702}
+  m_Center: {x: -8.482949e-18, y: 0, z: 0.024792979}
+--- !u!54 &1528092724
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528092722}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1528740605
 GameObject:
   m_ObjectHideFlags: 0
@@ -8571,11 +9075,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1733942875}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1733942874}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &1733942873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 1733942872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1733942874
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733942873}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1733942875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733942873}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355141, y: 0.010295117, z: 0.08078918}
+  m_Center: {x: 4.7325683e-18, y: 0, z: 0.03138407}
 --- !u!1001 &1741540352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9677,11 +10244,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: pictureFrame (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      propertyPath: m_TagString
+      value: MuseumPaintingsStolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2005157190}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2005157189}
   m_SourcePrefab: {fileID: 100100000, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+--- !u!1 &2005157188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: adb15dfbd19fad348b5697e520bb1525, type: 3}
+  m_PrefabInstance: {fileID: 2005157187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2005157189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005157188}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010355138, y: 0.010295107, z: 0.059039343}
+  m_Center: {x: 0, y: 0, z: 0.020509114}
+--- !u!54 &2005157190
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005157188}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2016473621
 PrefabInstance:
   m_ObjectHideFlags: 0

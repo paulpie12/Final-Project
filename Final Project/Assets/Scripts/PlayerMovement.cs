@@ -43,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float slowSpeed;
     bool isSlowed;
 
+    [Header("Cheats")]
+    static public bool doubleSpeed = false;
+    static public bool doubleJumpHeight = false;
+
     [Header("Other")]
     public Transform orientation;
 
@@ -247,6 +251,10 @@ public class PlayerMovement : MonoBehaviour
             prevPos = transform.position;
             yield return new WaitForFixedUpdate();
             currentSpeed = Mathf.RoundToInt(Vector3.Distance(transform.position, prevPos) / Time.fixedDeltaTime);
+            if (doubleSpeed == true)
+            {
+                currentSpeed = currentSpeed * 2;
+            }
         }
     }
 
@@ -255,6 +263,10 @@ public class PlayerMovement : MonoBehaviour
     {
         //reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        if (doubleJumpHeight == true)
+        {
+            jumpForce = jumpForce * 2;
+        }
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         Debug.Log("The jump code is running");
     }

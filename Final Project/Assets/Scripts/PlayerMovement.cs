@@ -107,6 +107,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("MoveX", 1f);
+        animator.SetFloat("MoveY", 1f);
 
         //This code allows you to jump
         if(InputControls.getJump() && readyToJump && grounded)
@@ -138,7 +140,8 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.sliding;
                 rb.AddForce(moveDirection * 5f, ForceMode.Impulse);
                 rb.drag = slideDrag;
-                animator.SetFloat("Speed", 1);
+                animator.SetFloat("MoveX", 0.5f);
+                animator.SetFloat("MoveY", 0.5f);
             }
 
             // Crouching State
@@ -153,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.crouching;
                 moveSpeed = crouchSpeed;
                 rb.drag = groundDrag;
-                animator.SetFloat("Speed", 1);
+                
             }
 
             // Sprinting State
@@ -168,7 +171,6 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
                 rb.drag = groundDrag;
-                animator.SetFloat("Speed", 1);
             }
 
             // Walking State
@@ -183,7 +185,6 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.walking;
                 moveSpeed = walkSpeed;
                 rb.drag = groundDrag;
-                animator.SetFloat("Speed", 1);
             }
 
             // Air State
@@ -196,6 +197,8 @@ public class PlayerMovement : MonoBehaviour
                 }
 
                 state = MovementState.air;
+                animator.SetFloat("MoveX", 2f);
+                animator.SetFloat("MoveY", 2f);
                 // Will update moveSpeed to walkSpeed/sprintSpeed in air if necessary
                 if (InputControls.getSprint())
                 {
@@ -216,6 +219,8 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalInput = 0;
             horizontalInput = 0;
+            animator.SetFloat("MoveX", 1f);
+            animator.SetFloat("MoveY", 0f);
         }
 
         //This code calculates the direction for movement

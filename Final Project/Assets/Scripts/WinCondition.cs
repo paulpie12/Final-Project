@@ -65,7 +65,7 @@ public class WinCondition : MonoBehaviour
             MuseumPaintingsStolen = MuseumPaintingsStolen + 1;
             Debug.Log("You have stolen a painting");
             Destroy(other.gameObject);
-            if (MuseumPaintingsStolen == 10)
+            if (MuseumPaintingsStolen == 9)
             {
                 MuseumWin = true;
                 AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Hub");

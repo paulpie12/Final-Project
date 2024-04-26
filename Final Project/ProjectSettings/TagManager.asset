@@ -15,6 +15,7 @@ TagManager:
   - MuseumPaintingsStolen
   - Guard
   - Camera
+  - Audio
   layers:
   - Default
   - TransparentFX

@@ -10,8 +10,18 @@ public class MenuNavigator : MonoBehaviour
     public GameObject OptionsMenu;
     public GameObject AboutMenu;
     public GameObject CreditsMenu;
+    AudioManager audioManager;
 
-    
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+    public void cliclSound()
+    {
+        audioManager.PlaySFX(audioManager.button);
+        Debug.Log("audio");
+    }
 
 
     public void GoToMainMenu() 

@@ -1897,8 +1897,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460964528}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9f9b10c2db565834084ce08ecb9a72af, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7bb441273a9b21240a13bc8b356fd70a, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 376303618a7fa68478ee678ee224b36c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 21591f885d22ef743a928ce597ef2b95, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4086,7 +4086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812442001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016556537, y: 0.049806856, z: -0.00082576746, w: 0.9986213}
+  m_LocalRotation: {x: 0.016556535, y: 0.049806852, z: -0.00082576735, w: 0.9986213}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7968,6 +7968,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 940127583}
   OptionsMenu: {fileID: 2020095838}
   AboutMenu: {fileID: 694121175}
+  CreditsMenu: {fileID: 0}
 --- !u!114 &1549450448
 MonoBehaviour:
   m_ObjectHideFlags: 0

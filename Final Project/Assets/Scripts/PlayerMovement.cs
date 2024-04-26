@@ -142,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.drag = slideDrag;
                 animator.SetFloat("MoveX", 0.5f);
                 animator.SetFloat("MoveY", 0.5f);
+                
             }
 
             // Crouching State
@@ -156,7 +157,9 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.crouching;
                 moveSpeed = crouchSpeed;
                 rb.drag = groundDrag;
-                
+                animator.SetFloat("MoveX", 1f);
+                animator.SetFloat("MoveY", 0f);
+
             }
 
             // Sprinting State
@@ -185,6 +188,14 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.walking;
                 moveSpeed = walkSpeed;
                 rb.drag = groundDrag;
+
+                // Idle State
+                if (currentSpeed == 0)
+                {
+                    Debug.Log("The player is idle");
+                    animator.SetFloat("MoveX", 0f);
+                    animator.SetFloat("MoveY", 0f);
+                }
             }
 
             // Air State
@@ -208,6 +219,9 @@ public class PlayerMovement : MonoBehaviour
                 }
                 rb.drag = airDrag;
             }
+
+            
+
         }
     }
 
@@ -219,8 +233,7 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalInput = 0;
             horizontalInput = 0;
-            animator.SetFloat("MoveX", 1f);
-            animator.SetFloat("MoveY", 0f);
+            
         }
 
         //This code calculates the direction for movement

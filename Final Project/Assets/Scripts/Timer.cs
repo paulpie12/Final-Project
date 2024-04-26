@@ -11,16 +11,13 @@ public class Timer : MonoBehaviour
     public Text timer;
     static bool BankWin = false;
 
-
     // Update is called once per frame
     void Update()
     {
-
-
         timeLeft -= Time.deltaTime;
         timer.text = (timeLeft).ToString("Time left: "+"0");
         if (timeLeft < 0)
-       {
+        {
             SceneManager.LoadScene("Menu_Lose");
         }
     }

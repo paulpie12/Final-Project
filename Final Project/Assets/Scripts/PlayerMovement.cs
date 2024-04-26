@@ -225,6 +225,11 @@ public class PlayerMovement : MonoBehaviour
             }
         } else {
             // If slowed by laser
+            // If previous state was sliding or crouched, adjust height
+            if (state == MovementState.sliding || state == MovementState.crouching)
+            {
+                transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+            }
             state = MovementState.lasered;
         }
     }

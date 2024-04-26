@@ -2681,7 +2681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321142597}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006712251, y: 0.049812593, z: 0.0003347778, w: 0.998736}
+  m_LocalRotation: {x: -0.006712251, y: 0.04981256, z: 0.00033477755, w: 0.998736}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3870,7 +3870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470968382}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016556537, y: 0.049806856, z: -0.00082576746, w: 0.9986213}
+  m_LocalRotation: {x: 0.016556535, y: 0.04980686, z: -0.00082576746, w: 0.9986213}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6166,7 +6166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84532aa412eb1947b7ba37e045ab158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 194748704}
   isPaused: 0
 --- !u!114 &740316709
 MonoBehaviour:
@@ -6183,9 +6183,9 @@ MonoBehaviour:
   cam: {fileID: 1693107596}
   orientation: {fileID: 103991511}
   attackPoint: {fileID: 406501734}
-  objectToThrow: {fileID: 1578373878730793168, guid: f84f53008f394674f922eadd05a1dd00, type: 3}
+  objectToThrow: {fileID: 6618775374985456234, guid: 5dd8321410eed284e942cd74543a5dd1, type: 3}
   totalThrows: 99
-  throwCooldown: 1
+  throwCooldown: 5
   throwForce: 100
   throwUpwardForce: 0
 --- !u!114 &740316710
@@ -14788,7 +14788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693107595}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006712253, y: 0.04981261, z: 0.00033477804, w: 0.99873596}
+  m_LocalRotation: {x: -0.006712253, y: 0.049812544, z: 0.0003347776, w: 0.99873596}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

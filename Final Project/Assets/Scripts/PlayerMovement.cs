@@ -47,7 +47,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Cheats")]
     static public bool doubleSpeed = false;
+    static public bool isDoubleSpeedActive = false;
     static public bool doubleJumpHeight = false;
+    static public bool isDoubleJumpHeightActive = false;
 
     [Header("Other")]
     public Transform orientation;
@@ -92,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
+        CheatHandler();
 
         // I moved the drag functionality to the state handler function - this section is only for debugging
         // This will create drag if you are grounded, and remove it if you are in the air
@@ -244,19 +247,15 @@ public class PlayerMovement : MonoBehaviour
             horizontalInput = 0;
         }
 
-        if (doubleSpeed == true)
-        {
-            verticalInput = verticalInput * 2;
-            horizontalInput = horizontalInput * 2;
-        }
-
         //This code calculates the direction for movement
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        //on ground
+    
+        // If on the ground
         if (grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
+        // If in the air
         else if (!grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
@@ -291,11 +290,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        if (doubleJumpHeight == true)
-        {
-            jumpForce = jumpForce * 2;
-        }
+
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        
         Debug.Log("The jump code is running");
     }
 
@@ -323,5 +320,34 @@ public class PlayerMovement : MonoBehaviour
         isSlowed = false;
         Debug.Log("The Player returns to normal speed");
     }
-    
+
+    private void CheatHandler() {
+        // If turning on doubleSpeed
+        if (doubleSpeed && !isDoubleSpeedActive) {
+            walkSpeed *= 2;
+            sprintSpeed *= 2;
+            crouchSpeed *= 2;
+            slideSpeed *= 2;
+            slowSpeed *= 2;
+            isDoubleSpeedActive = true;
+        // If turning off doubleSpeed
+        } else if (!doubleSpeed && isDoubleSpeedActive) {
+            walkSpeed /= 2;
+            sprintSpeed /= 2;
+            crouchSpeed /= 2;
+            slideSpeed /= 2;
+            slowSpeed /= 2;
+            isDoubleSpeedActive = false;
+        }
+
+        // If turning on doubleJumpHeight
+        if (doubleJumpHeight && !isDoubleJumpHeightActive) {
+            jumpForce *= 2;
+            isDoubleJumpHeightActive = true;
+        // If turning off doubleJumpHeight
+        } else if (!doubleJumpHeight && isDoubleJumpHeightActive) {
+            jumpForce /= 2;
+            isDoubleJumpHeightActive = false;
+        }
+    }
 }

@@ -1730,7 +1730,7 @@ MonoBehaviour:
   attackPoint: {fileID: 1263453782}
   objectToThrow: {fileID: 6618775374985456234, guid: 5dd8321410eed284e942cd74543a5dd1, type: 3}
   totalThrows: 99
-  throwCooldown: 1
+  throwCooldown: 5
   throwForce: 100
   throwUpwardForce: 0
 --- !u!114 &460964535
@@ -5906,7 +5906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448103808}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0067122527, y: 0.049812555, z: 0.00033477764, w: 0.998736}
+  m_LocalRotation: {x: -0.0067122527, y: 0.049812593, z: 0.00033477787, w: 0.998736}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6934,7 +6934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733800838}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006712255, y: 0.04981254, z: 0.0003347777, w: 0.99873596}
+  m_LocalRotation: {x: -0.006712255, y: 0.04981261, z: 0.0003347781, w: 0.99873596}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

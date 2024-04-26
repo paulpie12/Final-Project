@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84532aa412eb1947b7ba37e045ab158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 97604661}
   isPaused: 0
 --- !u!114 &95362286
 MonoBehaviour:
@@ -1418,9 +1418,9 @@ MonoBehaviour:
   cam: {fileID: 592232015}
   orientation: {fileID: 1383975121}
   attackPoint: {fileID: 224675971}
-  objectToThrow: {fileID: 1578373878730793168, guid: f84f53008f394674f922eadd05a1dd00, type: 3}
+  objectToThrow: {fileID: 6618775374985456234, guid: 5dd8321410eed284e942cd74543a5dd1, type: 3}
   totalThrows: 99
-  throwCooldown: 1
+  throwCooldown: 5
   throwForce: 100
   throwUpwardForce: 0
 --- !u!114 &95362287
@@ -2514,7 +2514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178956668}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016649332, y: 0.050087485, z: -0.00083508756, w: 0.9986057}
+  m_LocalRotation: {x: 0.016649304, y: 0.050087515, z: -0.0008350867, w: 0.9986057}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -32,10 +32,10 @@ public class WinCondition : MonoBehaviour
         if (other.CompareTag("BankTP"))
         {
             //lets the code actually run inbbetween scenes
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Bank");
             //This also triggers the loss condition for the bank level
-            Invoke("BankDeathTimer", 60);
+            //"BankDeathTimer", 60);
             Debug.Log("The invoke invoked");
         }
         if (other.CompareTag("MuseumTP"))
@@ -85,7 +85,7 @@ public class WinCondition : MonoBehaviour
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Menu_Lose");
         }
     }
-    public void BankDeathTimer()
+ /*public void BankDeathTimer()
     {
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
@@ -95,4 +95,5 @@ public class WinCondition : MonoBehaviour
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Menu_Lose");
         }
     }
+ */
 }

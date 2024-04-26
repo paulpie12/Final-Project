@@ -67,7 +67,7 @@ public class enemyNavmesh : MonoBehaviour
         {
             Debug.Log("The Enemy is stunned");
             enemy.SetDestination(Enemypos.position);
-            Invoke("stunevent", 3);
+            Invoke("stunevent", 5);
         }
     }
 
@@ -79,6 +79,7 @@ public class enemyNavmesh : MonoBehaviour
             stunned = true;
         }
     }
+
     private void stunevent()
     {
         stunned = false;

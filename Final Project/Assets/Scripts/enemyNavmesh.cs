@@ -71,11 +71,11 @@ public class enemyNavmesh : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "sleep")
+        if (other.gameObject.tag == "sleep")
         {
-            Debug.Log("Entered collision with " + collision.gameObject.name);
+            Debug.Log("Entered collision with " + other.gameObject.name);
             stunned = true;
         }
     }
@@ -84,6 +84,7 @@ public class enemyNavmesh : MonoBehaviour
     {
         stunned = false;
     }
+
    //Start FOV script Addition
     private void Start()
     {

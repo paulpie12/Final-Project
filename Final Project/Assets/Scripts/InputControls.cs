@@ -13,7 +13,7 @@ public class InputControls : MonoBehaviour
     public static KeyCode sneakKey = KeyCode.C;
     public static KeyCode throwKey = KeyCode.E;
 
-    public static KeyCode pauseKey = KeyCode.Escape;
+    public static KeyCode pauseKey = KeyCode.P;
 
     public static bool getJump() {
         if (Input.GetKey(jumpKey)) {

@@ -30,7 +30,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Crouching")]
     public float crouchSpeed;
+    public float slideSpeed;
     public float crouchYScale;
+    public float slideYScale;
     private float startYScale;
 
     [Header("Ground Check")]
@@ -64,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
         sprinting,
         crouching,
         sliding,
-        air
+        air,
+        lasered
     }
 
     private void Start()
@@ -111,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("MoveY", 1f);
 
         //This code allows you to jump
-        if(InputControls.getJump() && readyToJump && grounded)
+        if (InputControls.getJump() && readyToJump && grounded && state != MovementState.lasered)
         {
             readyToJump = false;
             //audioSource.Play(); Since no audio source is connected, this causes code to stop in the middle of the function
@@ -123,20 +126,21 @@ public class PlayerMovement : MonoBehaviour
     // State Handler function determines the player's current movement state every frame
     private void StateHandler()
     {
-        // Sliding State
-        // Slide is active when crouchKey is pressed, player is on the ground, 
-        // moveSpeed is set to sprintSpeed, and the player is moving
+        // If slowed by lasers, can't sprint or crouch
         if (isSlowed == false)
         {
-
-            if (InputControls.getCrouch() && grounded && moveSpeed == sprintSpeed && currentSpeed != 0) 
+            // Sliding State
+            // Slide is active when crouchKey is pressed, player is on the ground, 
+            // moveSpeed is set to sprintSpeed or slideSpeed, and the player is moving
+            if (InputControls.getCrouch() && grounded && (moveSpeed == sprintSpeed || moveSpeed == slideSpeed) && currentSpeed != 0) 
             {
                 // If previous state was not sliding or crouched, adjust height
-                if (state != MovementState.sliding && state != MovementState.crouching)
+                if (state != MovementState.sliding)
                 {
-                    transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+                    transform.localScale = new Vector3(transform.localScale.x, slideYScale, transform.localScale.z);
                     rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
                 }
+                moveSpeed = slideSpeed;
                 state = MovementState.sliding;
                 rb.AddForce(moveDirection * 5f, ForceMode.Impulse);
                 rb.drag = slideDrag;
@@ -149,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
             else if (InputControls.getCrouch() && grounded)
             {
                 // If previous state was not sliding or crouched, adjust height
-                if (state != MovementState.sliding && state != MovementState.crouching)
+                if (state != MovementState.crouching)
                 {
                     transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
                     rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
@@ -219,9 +223,9 @@ public class PlayerMovement : MonoBehaviour
                 }
                 rb.drag = airDrag;
             }
-
-            
-
+        } else {
+            // If slowed by laser
+            state = MovementState.lasered;
         }
     }
 
@@ -233,7 +237,12 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalInput = 0;
             horizontalInput = 0;
-            
+        }
+
+        if (doubleSpeed == true)
+        {
+            verticalInput = verticalInput * 2;
+            horizontalInput = horizontalInput * 2;
         }
 
         //This code calculates the direction for movement
@@ -262,17 +271,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // This function calculates your current speed
+    // This function calculates your current speed for testing purposes, it does not affect speed at all
     IEnumerator SpeedCalculation() 
     {
         while (true) {
             prevPos = transform.position;
             yield return new WaitForFixedUpdate();
             currentSpeed = Mathf.RoundToInt(Vector3.Distance(transform.position, prevPos) / Time.fixedDeltaTime);
-            if (doubleSpeed == true)
-            {
-                currentSpeed = currentSpeed * 2;
-            }
         }
     }
 

@@ -1747,24 +1747,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSpeed: 0
   moveSpeed: 0
-  walkSpeed: 10
-  sprintSpeed: 15
+  walkSpeed: 13
+  sprintSpeed: 26
   groundDrag: 5
-  slideDrag: 0
+  slideDrag: -0.5
   airDrag: 3
-  jumpForce: 30
+  jumpForce: 60
   jumpCooldown: 0.5
   airMultiplier: 0.4
   readyToJump: 0
-  crouchSpeed: 5
+  crouchSpeed: 8
+  slideSpeed: 60
   crouchYScale: 0.5
+  slideYScale: 0.35
   playerHeight: 8
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
   grounded: 0
   slowDuration: 5
-  slowSpeed: 5
+  slowSpeed: 8
   orientation: {fileID: 686592385}
   state: 0
 --- !u!1001 &477288549
@@ -3208,7 +3210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812442001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016556535, y: 0.049806852, z: -0.00082576735, w: 0.9986213}
+  m_LocalRotation: {x: 0.016556537, y: 0.049806856, z: -0.00082576746, w: 0.9986213}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5904,7 +5906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448103808}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0067122527, y: 0.049812593, z: 0.00033477787, w: 0.998736}
+  m_LocalRotation: {x: -0.0067122527, y: 0.049812555, z: 0.00033477764, w: 0.998736}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6932,7 +6934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733800838}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006712255, y: 0.04981261, z: 0.0003347781, w: 0.99873596}
+  m_LocalRotation: {x: -0.006712255, y: 0.04981254, z: 0.0003347777, w: 0.99873596}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

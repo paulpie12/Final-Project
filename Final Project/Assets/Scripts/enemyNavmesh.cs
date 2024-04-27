@@ -27,11 +27,15 @@ public class enemyNavmesh : MonoBehaviour
     Animator animator;
 
     public bool canSeePlayer;
+    AudioManager audioManager;
+
+    bool playaudio = true;
 
 
     private void Awake()
     {
         Player = GameObject.Find("Player").transform;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
 
@@ -51,6 +55,13 @@ public class enemyNavmesh : MonoBehaviour
         // Changed from else if to a new set of if statements
         if (playerInSight == true && sneaking == false && canSeePlayer == true)
         {
+            if (playaudio == true)
+            {
+                audioManager.PlaySFX(audioManager.guardAlert);
+                Debug.Log("audio");
+                playaudio = false;
+            }
+            Invoke("guardaudio", 10);
             enemy.SetDestination(Player.position);
             animator.SetFloat("Walk", 1);
             Debug.Log("Enemy is targeting player");
@@ -69,6 +80,10 @@ public class enemyNavmesh : MonoBehaviour
             enemy.SetDestination(Enemypos.position);
             Invoke("stunevent", 5);
         }
+    }
+    private void guardaudio()
+    {
+        playaudio = true;
     }
 
     public void OnTriggerEnter(Collider other)

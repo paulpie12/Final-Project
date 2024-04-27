@@ -11,8 +11,11 @@ public class WinCondition : MonoBehaviour
     static bool MuseumWin = false;
     static int MuseumPaintingsStolen = 0;
     static bool WhiteHouseWin = false;
-
-
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     public void Update()
     {
         if (BankWin == true && MuseumWin == true && WhiteHouseWin == true)
@@ -35,7 +38,7 @@ public class WinCondition : MonoBehaviour
             //DontDestroyOnLoad(this.gameObject);
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Bank");
             //This also triggers the loss condition for the bank level
-            //"BankDeathTimer", 60);
+            //Invoke("BankDeathTimer", 60);
             Debug.Log("The invoke invoked");
         }
         if (other.CompareTag("MuseumTP"))
@@ -50,12 +53,16 @@ public class WinCondition : MonoBehaviour
         //This set of code allows you to win each level
         if (other.CompareTag("BankWin"))
         {
+            audioManager.PlaySFX(audioManager.Pickupbook);
+            Debug.Log("audio");
             BankWin = true;
             Debug.Log("You have beat the Bank");
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Hub");
         }
         if (other.CompareTag("WhiteHouseWin"))
         {
+            audioManager.PlaySFX(audioManager.Pickupbook);
+            Debug.Log("audio");
             WhiteHouseWin = true;
             Debug.Log("You have beat the White House");
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Hub");
@@ -64,6 +71,8 @@ public class WinCondition : MonoBehaviour
         {
             MuseumPaintingsStolen = MuseumPaintingsStolen + 1;
             Debug.Log("You have stolen a painting");
+            audioManager.PlaySFX(audioManager.Pickupbook);
+            Debug.Log("audio");
             Destroy(other.gameObject);
             if (MuseumPaintingsStolen == 9)
             {
@@ -96,4 +105,9 @@ public class WinCondition : MonoBehaviour
         }
     }
  */
+
+    public void menuTP()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Lvl_Hub");
+    }
 }
